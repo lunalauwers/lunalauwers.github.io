@@ -1,34 +1,76 @@
-<!-- Slideshow container -->
-<div class="slideshow-container">
-
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="https://lunalauwers.github.io/foto.html" style="width:100%">
-    <div class="text">Caption Text</div>
+<!-- The grid: four columns -->
+<div class="row">
+  <div class="column">
+    <img src="https://media.tuicontent.nl/p/header/vakantie-parijs.jpg" alt="Nature" onclick="openImg(this);">
   </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="http://tripfreakz.com/uploads/at01.jpg" style="width:100%">
-    <div class="text">Caption Two</div>
+  <div class="column">
+    <img src="http://tripfreakz.com/uploads/at01.jpg" alt="Snow" onclick="openImg(this);">
   </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://www.ikbenopreis.nl/wp-content/uploads/2013/10/berlijn.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+  <div class="column">
+    <img src="https://www.ikbenopreis.nl/wp-content/uploads/2013/10/berlijn.jpg" alt="Mountains" onclick="openImg(this);">
   </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <div class="column">
+    <img src="https://cdn.getyourguide.com/img/tour_img-414424-70.jpg" alt="Lights" onclick="openImg(this);">
+  </div>
 </div>
-<br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
 </div> 
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+} 
